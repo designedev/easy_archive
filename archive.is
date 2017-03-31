@@ -1,0 +1,14 @@
+var archive = require('archive.is');
+
+if(process.argv.length < 3) {
+	console.log("usage : node archive.js URL_TO_ARCHIVE");
+}
+else {
+	let url = process.argv[2];
+	archive.save(url).then(response => console.log(response.shortUrl));
+}
+
+//archive.save('http://clien.net/cs2/bbs/board.php?bo_table=lecture&wr_id=354718').then(function (result) {
+//	console.log(result.shortUrl);
+//});
+
